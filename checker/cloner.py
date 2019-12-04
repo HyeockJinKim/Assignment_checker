@@ -3,9 +3,9 @@ from git import Repo, GitCommandError
 import os
 
 
-def clone_all(directory_name='assignment'):
+def clone_all(csv='checker.csv', directory_name='assignment'):
     repos = []
-    df = pd.read_csv('checker.csv', encoding='utf-8')
+    df = pd.read_csv(csv, encoding='utf-8')
     df = df.fillna('')
 
     if not os.path.exists(directory_name):
@@ -26,3 +26,6 @@ def clone_all(directory_name='assignment'):
             print(row['학번'], row['이름'], row['repo'], 'repository 문제')
 
     return repos
+
+
+clone_all()
