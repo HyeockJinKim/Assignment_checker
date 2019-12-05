@@ -1,0 +1,18 @@
+    int result = SUCCESS;
+    {
+        unique_obj c(new Object(30));
+        c.release();
+        if (c.get() != nullptr) {
+            result = FAIL;
+            string str(__func__, ": Error is c.get() != nullptr");
+            print_error(str);
+        }
+        c.release();
+        if (c.get() != nullptr) {
+            result = FAIL;
+            string str(__func__, ": Error is c.get() != nullptr");
+            print_error(str);
+        }
+    }
+
+    return result;

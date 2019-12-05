@@ -1,0 +1,51 @@
+    int result = SUCCESS;
+    Object * obj = new Object(11);
+    shared_ref a(obj);
+    shared_ref b = a;
+    {
+        shared_ref c = b;
+        c.release();
+        if (a.count() != 2) {
+            result = FAIL;
+            string str(__func__, ": Error is a.count() != 2");
+            print_error(str);
+        }
+        if (b.count() != 2) {
+            result = FAIL;
+            string str(__func__, ": Error is b.count() != 2");
+            print_error(str);
+        }
+        if (c.count() != 0) {
+            result = FAIL;
+            string str(__func__, ": Error is c.count() != 0");
+            print_error(str);
+        }
+        if (c.get() != nullptr) {
+            result = FAIL;
+            string str(__func__, ": Error is c.get() != nullptr");
+            print_error(str);
+        }
+        c.release();
+        if (a.count() != 2) {
+            result = FAIL;
+            string str(__func__, ": Error is a.count() != 2");
+            print_error(str);
+        }
+        if (b.count() != 2) {
+            result = FAIL;
+            string str(__func__, ": Error is b.count() != 2");
+            print_error(str);
+        }
+        if (c.count() != 0) {
+            result = FAIL;
+            string str(__func__, ": Error is c.count() != 0");
+            print_error(str);
+        }
+        if (c.get() != nullptr) {
+            result = FAIL;
+            string str(__func__, ": Error is c.get() != nullptr");
+            print_error(str);
+        }
+    }
+
+    return result;

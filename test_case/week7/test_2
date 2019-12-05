@@ -1,0 +1,23 @@
+    shared_ref a(new Object(11));
+    shared_ref b(new Object(7));
+    shared_ref c = a + b;
+
+    int result = SUCCESS;
+    if (a.count() != 1) {
+        result = FAIL;
+        string str(__func__, ": Error is a.count() != 1");
+        print_error(str);
+    }
+
+    if (b.count() != 1) {
+        result = FAIL;
+        string str(__func__, ": Error is b.count() != 1");
+        print_error(str);
+    }
+
+    if (c.count() != 1) {
+        result = FAIL;
+        string str(__func__, ": Error is c.count() != 1");
+        print_error(str);
+    }
+    return result;

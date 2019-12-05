@@ -1,0 +1,35 @@
+    int result = SUCCESS;
+    unique_obj a(new Object(11));
+    unique_obj b(new Object(7));
+    if (a->get() != 11) {
+        result = FAIL;
+        string str(__func__, ": Error is a->get() != 11");
+        print_error(str);
+    }
+
+    if (b->get() != 7) {
+        result = FAIL;
+        string str(__func__, ": Error is b->get() != 7");
+        print_error(str);
+    }
+
+    unique_obj c = a + b;
+
+    if (a.get() != nullptr) {
+        result = FAIL;
+        string str(__func__, ": Error is a.get() != nullptr");
+        print_error(str);
+    }
+
+    if (b.get() != nullptr) {
+        result = FAIL;
+        string str(__func__, ": Error is b.get() != nullptr");
+        print_error(str);
+    }
+
+    if (c->get() != 18) {
+        result = FAIL;
+        string str(__func__, ": Error is c->get() != 18");
+        print_error(str);
+    }
+    return result;

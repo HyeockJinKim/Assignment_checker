@@ -1,0 +1,20 @@
+#include "smart_ptr/shared_mut.h"
+#include <iostream>
+#include <vector>
+#include <string>
+
+#define SUCCESS 0
+#define FAIL 1
+
+using namespace std;
+using namespace ptr;
+
+
+typedef ptr::shared_mut shared_ref;
+typedef ptr::unique_immut unique_obj;
+
+static std::vector<int(*)()> vec;
+
+void print_error(string& err) {
+    cout <<"\n\n\n"<< err << endl;
+}

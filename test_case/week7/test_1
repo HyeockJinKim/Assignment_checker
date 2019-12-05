@@ -1,0 +1,23 @@
+    shared_ref a(new Object(11));
+    shared_ref b(new Object(7));
+    shared_ref c = a + b;
+
+    int result = SUCCESS;
+    if (a->get() != 11) {
+        result = FAIL;
+        string str(__func__, ": Error is a->get() != 11");
+        print_error(str);
+    }
+
+    if (b->get() != 7) {
+        result = FAIL;
+        string str(__func__, ": Error is b->get() != 7");
+        print_error(str);
+    }
+
+    if (c->get() != 18) {
+        result = FAIL;
+        string str(__func__, ": Error is c->get() != 18");
+        print_error(str);
+    }
+    return result;

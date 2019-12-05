@@ -22,19 +22,45 @@ class Classes:
         return classes
 
     def clone_all(self):
-        length = len(self.students)
-        for i, student in enumerate(self.students):
-            student.clone_repo()
-            print('진행 상황: ', i, '/', length)
+        print('Clone repository :: \n')
+
+        # length = len(self.students)
+        student = self.students[1]
+        student.clone_repo()
+        student.rename_folder()
+
+        # for i, student in enumerate(self.students):
+        #     student.clone_repo()
+        #     student.rename_folder()
+        #     print('진행 상황: ', i, '/', length)
+        print()
 
     def test_all(self):
-        length = len(self.students)
-        for i, student in enumerate(self.students):
-            student.test_all()
-            print('진행 상황: ', i, '/', length)
+        print('Test code Run :: \n')
+
+        # length = len(self.students)
+        student = self.students[1]
+        student.test_all()
+        # for i, student in enumerate(self.students):
+        #     student.test_all()
+        #     print('진행 상황: ', i, '/', length)
+        print()
 
     def update_all(self):
-        length = len(self.students)
-        for i, student in enumerate(self.students):
-            student.update_assignment()
-            print('진행 상황: ', i, '/', length)
+        print('Read Assignment :: \n')
+
+        # length = len(self.students)
+        student = self.students[1]
+        student.update_assignment()
+        # for i, student in enumerate(self.students):
+        #     student.update_assignment()
+        #     print('진행 상황: ', i, '/', length)
+        print()
+
+    def score_all(self):
+        print('Show Score :: \n')
+        student = self.students[1]
+        print(student.id, student.name, student.score)
+        # for i, student in enumerate(self.students):
+        #     print(student.id, student.name, student.score)
+        print()

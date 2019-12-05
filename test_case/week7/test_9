@@ -1,0 +1,11 @@
+    int result = SUCCESS;
+    unique_obj a(new Object(30));
+    {
+        unique_obj c(new Object(30));
+        if (a->get() != c->get()) {
+            result = FAIL;
+            string str(__func__, ": Error is a->get() != c->get()");
+            print_error(str);
+        }
+    }
+    return result;

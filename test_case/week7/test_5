@@ -1,0 +1,30 @@
+    int result = SUCCESS;
+    Object * obj = new Object(11);
+    shared_ref a(obj);
+    shared_ref b = a;
+
+    if (a.get() != obj) {
+        result = FAIL;
+        string str(__func__, ": Error is a.get() != obj");
+        print_error(str);
+    }
+
+    if (a.get() != b.get()) {
+        result = FAIL;
+        string str(__func__, ": Error is a.get() != b.get()");
+        print_error(str);
+    }
+
+    if (a->get() != 11) {
+        result = FAIL;
+        string str(__func__, ": Error is a.get() != 11");
+        print_error(str);
+    }
+
+    if (b->get() != 11) {
+        result = FAIL;
+        string str(__func__, ": Error is a.get() != 11");
+        print_error(str);
+    }
+
+    return result;
